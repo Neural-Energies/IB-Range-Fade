@@ -8,7 +8,7 @@ import datetime
 def price_within_range(price, target, lower_threshold, upper_threshold):
     return lower_threshold <= price - target <= upper_threshold
 
-@st.cache_data(allow_output_mutation=True)
+@st.experimental_memo()
 def load_data():
     df = pd.read_csv('https://raw.githubusercontent.com/Neural-Energies/IB-Range-Fade/main/IBSTUDY.CSV')
 
