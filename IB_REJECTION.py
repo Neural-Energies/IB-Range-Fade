@@ -10,7 +10,8 @@ def price_within_range(price, target, lower_threshold, upper_threshold):
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r'C:\Users\Dawson\IBSTUDY.CSV')
+    df = pd.read_csv('https://raw.githubusercontent.com/Neural-Energies/IB-Range-Fade/main/IBSTUDY.CSV')
+
     df['Date'] = pd.to_datetime(df['Date'])
     df['TradingDay'] = df['Date'].dt.date
     return df
